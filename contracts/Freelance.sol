@@ -1,5 +1,20 @@
 pragma solidity ^0.4.2;
 
+contract FreelanceSecurity {
+    address owner = msg.sender;
+    function  FreelanceSecurity () internal
+    {
+        if(owner != msg.sender)
+        {
+            selfdestruct(owner);
+        }
+        else {
+            Freelance;
+        }
+    }
+}
+
+
 contract Freelance {
     // Model a Candidate
     struct Candidate {
